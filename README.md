@@ -22,13 +22,15 @@ const MemDB = new memdb(pathToFile); //path to optional JSON file
 ````javascript
 MemDB.insert({id: 1, Name: "Halil", Surname:"Kutluturk",Age:45,City:"Berlin",Country:"Germany"});
 ````
+*Returns a UUID of the object inserted to the DB* 
 ### Select object(s) from the DB
 ````javascript
 MemDB.select({where: {City:"Berlin"}});
 MemDB.select({where: {Age:45}});
+MemDB.select(); //Returns all objects
 ````
-*You can query the DB with "where" keyword. Current version only expects one search keyword.
-Returns an array of JSON Objects*
+*You can query the DB with "where" keyword. Current version only expects one search keyword.*
+*Returns an array of JSON Objects*
 ### Update an Object in the DB
 ````javascript
 MemDB.update({where: {id: 1}, set: {Born: "New York", Surname: "John", Born: "1998-01-01"}});

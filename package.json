@@ -1,12 +1,21 @@
 {
   "name": "memdb-json",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Very fast in memory object db that can be queried very easily",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["memory","object","db","memory db","json object db"],
+  "keywords": [
+    "memory",
+    "object",
+    "db",
+    "memory db",
+    "json object db"
+  ],
   "author": "Halil Kutluturk",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "uuid": "^8.3.2"
+  }
 }

@@ -1,5 +1,5 @@
 const fs = require('fs');
-
+const { v4: uuidv4 } = require('uuid');
 class memdb {
     db = [];
 
@@ -21,7 +21,9 @@ class memdb {
 
     insert(obj) {
         if (!this.#isJSONObject(obj)) throw new Error('Not an object');
+        obj.memDBID=uuidv4();
         this.db.push(obj);
+        return obj.memDBID;
     }
 
     select(obj) {
