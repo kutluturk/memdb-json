@@ -1,6 +1,6 @@
 {
   "name": "memdb-json",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Very fast in memory object db that can be queried very easily",
   "main": "index.js",
   "scripts": {
