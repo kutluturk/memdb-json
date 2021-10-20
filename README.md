@@ -1,4 +1,4 @@
-#In-Memory Database For JSON Objects that can be queried like SQL
+# In-Memory Database For JSON Objects that can be queried like SQL
 
 __This package is intended to be used as a drop-in small footprint Object database solution for Node.JS.__
 
