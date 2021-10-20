@@ -1,7 +1,7 @@
 {
   "name": "memdb-json",
-  "version": "1.0.2",
-  "description": "Very fast in memory object db that can be queried very easily",
+  "version": "1.0.3",
+  "description": "Very fast in memory object db that can be queried very easily with SQL like commands.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

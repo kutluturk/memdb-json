@@ -1,6 +1,8 @@
-# NodeJS In-Memory Database For JSON Objects
+#In-Memory Database For JSON Objects that can be queried like SQL
 
-__This package is the alpha version of an in-memory DB for an array of JSON objects__
+__This package is the alpha version of an in-memory DB for an array of JSON objects.__
+
+__This package is intended to be used as an in memory database that can be queried like an SQL or NoSQL database.__
 
 ## How to Install
 
@@ -8,7 +10,7 @@ npm i --save memdb-json
 
 ## Usage
 
-*This package is still in alpha stage. Before be aware before using in production environment.*
+*This package is still in alpha stage. Please be aware before using in production environment.*
 
 ### Initialization
 
