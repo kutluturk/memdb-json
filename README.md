@@ -1,8 +1,6 @@
 #In-Memory Database For JSON Objects that can be queried like SQL
 
-__This package is the alpha version of an in-memory DB for an array of JSON objects.__
-
-__This package is intended to be used as an in memory database that can be queried like an SQL or NoSQL database.__
+__This package is intended to be used as a drop-in small footprint Object database solution for Node.JS.__
 
 ## How to Install
 
