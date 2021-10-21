@@ -1,5 +1,6 @@
 const fs = require('fs');
-const { v4: uuidv4 } = require('uuid');
+const {v4: uuidv4} = require('uuid');
+
 class memdb {
     db = [];
 
@@ -21,7 +22,7 @@ class memdb {
 
     insert(obj) {
         if (!this.#isJSONObject(obj)) throw new Error('Not an object');
-        obj.memDBID=uuidv4();
+        obj.memDBID = uuidv4();
         this.db.push(obj);
         return obj.memDBID;
     }
@@ -30,19 +31,32 @@ class memdb {
         if (obj === undefined) return this.db;
         else {
             if (Object.keys(obj).indexOf('where') === -1 || !this.#isJSONObject(obj)) throw new Error('Query error');
-            return this.db.filter((x) => {
+            /*return this.db.filter((x) => {
                 return x[Object.keys(obj.where)[0]] === obj.where[Object.keys(obj.where)[0]];
-            });
+            });*/
+            return this.#inSelect(obj.where);
         }
+    }
+
+    #inSelect(obj) {
+        let a = this.db.filter((x) => {
+            return x[Object.keys(obj)[0]] === obj[Object.keys(obj)[0]];
+        })
+        for (let i = 1; i < Object.keys(obj).length; i++) {
+            a = a.filter((x) => {
+                return x[Object.keys(obj)[i]] === obj[Object.keys(obj)[i]];
+            })
+        }
+        return a;
     }
 
     update(obj) {
         if (Object.keys(obj).indexOf('where') === -1 || Object.keys(obj).indexOf('set') === -1 || !this.#isJSONObject(obj)) throw new Error('Query error');
-        let a = this.db.filter((x) => {
+        /*let a = this.db.filter((x) => {
             return x[Object.keys(obj.where)[0]] === obj.where[Object.keys(obj.where)[0]];
-        });
+        });*/
+        let a = this.#inSelect(obj.where);
         const set = obj.set;
-        console.info(set);
         a.forEach(_a => {
             Object.keys(set).forEach(_set => {
                 _a[_set] = set[_set];
